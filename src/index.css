@@ -19,7 +19,8 @@
     border-radius: 20px;
     border-style: solid;
     border-color: rgb(226, 43, 43);
-    cursor: pointer
+    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 .monster p{
     margin-bottom: 25px;
@@ -91,9 +92,26 @@
     border-radius: 20px;
     border-style: solid;
     border-color: rgb(226, 43, 43);
-    background-color: opacity;
+    background-image: none; 
+	background: transparent;
     font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
   }
   .btns button:last-child {
     margin-right: 0;
+  }
+  .btns button:hover {
+    transform: scale(1.1);
+  }
+  .btns button:active {
+    transform: scale(0.95);
+  }
+  .monster:hover {
+    transform: scale(1.05);
+  }
+body{
+    background-image: url('/src/components/imgs/phone.jpg');
+    max-width: 1920px;
+    max-height: 1080px;
   }

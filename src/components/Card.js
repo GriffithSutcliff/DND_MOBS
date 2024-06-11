@@ -16,7 +16,7 @@ export default function Card({ monster, onCardClick}) {
       })
       .then(data => {
         setMonsterDetails(data);
-        console.log(data);
+        console.log(data.type);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ export default function Card({ monster, onCardClick}) {
     return <div className='monster'>Loading...</div>;
   }
 
-  const imageUrl = monsterDetails.image ? `https://www.dnd5eapi.co${monsterDetails.image}` : '../../src/components/imgs/plug.png';
+  const imageUrl = monsterDetails.image ? `https://www.dnd5eapi.co${monsterDetails.image}` : require('./imgs/plug.png');
   
   return (
     <div className='monster' onClick={() => onCardClick(monster)}>
@@ -39,7 +39,6 @@ export default function Card({ monster, onCardClick}) {
       <img  src={imageUrl}></img>
       </div>
       <p className='name'>{monster.name}</p>
-      <p className=''></p>
     </div>
   )
 }
