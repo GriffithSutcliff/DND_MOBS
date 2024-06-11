@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+    padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.monster{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(32, 32, 32);
+    text-align: center;
+    color: aliceblue;
+    font-family: "Arimo", sans-serif;
+    width: 200px;
+    height: 200px;
+    border: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(226, 43, 43);
+}
+.monster p{
+    margin-bottom: 25px;
+}
+.img{
+    min-width: 150px;
+    min-height: 150px;
+    margin-bottom: 10px;
+}
+.img img{
+    max-width: 150px;
+    max-height: 150px;
+}
+.monster-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: center;
+}
+.list{
+    display: flex;
+    justify-content: center;
+}
+.loading{
+    font-family: "Jaini", system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 250px;
 }
