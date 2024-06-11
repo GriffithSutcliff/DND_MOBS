@@ -31,11 +31,12 @@ export default function Card({ monster, onCardClick}) {
     return <div className='monster'>Loading...</div>;
   }
 
+  const imageUrl = monsterDetails.image ? `https://www.dnd5eapi.co${monsterDetails.image}` : '../../src/components/imgs/plug.png';
   
   return (
     <div className='monster' onClick={() => onCardClick(monster)}>
       <div className='img'>
-      <img  src={`https://www.dnd5eapi.co${monsterDetails.image}`}></img>
+      <img  src={imageUrl}></img>
       </div>
       <p className='name'>{monster.name}</p>
       <p className=''></p>
