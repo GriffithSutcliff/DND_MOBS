@@ -27,7 +27,7 @@ export default function MonsterDetails({monster, onBack}) {
     return <div>Error: {error}</div>;
   }
   if (!monsterDetails) {
-    return <div className='loading'>Loading...</div>;
+    return <div className='loading'>Loading<span class="dots"></span></div>;
   }
   return (
     <div>
