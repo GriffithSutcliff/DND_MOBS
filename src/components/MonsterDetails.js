@@ -42,33 +42,42 @@ export default function MonsterDetails({monster, onBack}) {
         <div>HD: {monsterDetails.hit_dice}</div>
         <div>Walk: {monsterDetails.speed.walk}{swim}</div>
         <div>Size: {monsterDetails.size}</div>
+        <div>Rate: {monsterDetails.challenge_rating}, XP: {monsterDetails.xp}</div>
         <button onClick={onBack}>Back</button>
       </div>
-      <div className='stats'>
-          <div className='stats-column'>
-            <div>Strength</div>
-            <div>{monsterDetails.strength}</div>
+      <div className='right-side'>
+        <div className='stats'>
+            <div className='stats-column'>
+              <div>Strength</div>
+              <div>{monsterDetails.strength}</div>
+            </div>
+            <div className='stats-column'>
+              <div>Dexterity</div>
+              <div>{monsterDetails.dexterity}</div>
+            </div>
+            <div className='stats-column'>
+              <div>Constitution</div>
+              <div>{monsterDetails.constitution}</div>
+            </div>
+            <div className='stats-column'>
+              <div>Intelligence</div>
+              <div>{monsterDetails.intelligence}</div>
+            </div>
+            <div className='stats-column'>
+              <div>Wisdom</div>
+              <div>{monsterDetails.wisdom}</div>
+            </div>
+            <div className='stats-column'>
+              <div>Charisma</div>
+              <div>{monsterDetails.charisma}</div>
+            </div>
           </div>
-          <div className='stats-column'>
-            <div>Dexterity</div>
-            <div>{monsterDetails.dexterity}</div>
-          </div>
-          <div className='stats-column'>
-            <div>Constitution</div>
-            <div>{monsterDetails.constitution}</div>
-          </div>
-          <div className='stats-column'>
-            <div>Intelligence</div>
-            <div>{monsterDetails.intelligence}</div>
-          </div>
-          <div className='stats-column'>
-            <div>Wisdom</div>
-            <div>{monsterDetails.wisdom}</div>
-          </div>
-          <div className='stats-column'>
-            <div>Charisma</div>
-            <div>{monsterDetails.charisma}</div>
-          </div>
+          <div className='spells'>
+          <h2>Proficiencies</h2>
+          {monsterDetails.proficiencies.map((spell, index) => (
+            <div key={index}>{spell.proficiency.name}</div>
+          ))}
+        </div>
         </div>
     </div>
   )

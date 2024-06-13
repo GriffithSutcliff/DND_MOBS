@@ -115,7 +115,7 @@
     transform: scale(1.05);
   }
 body{
-    background-image: url('/src/components/imgs/phone.jpg');
+    background-image: url('');
     max-width: 1920px;
     max-height: 1080px;
   }
@@ -178,5 +178,8 @@ body{
   .monster-details img{
     max-width: 500px;
     max-height: 500px;
+  }
+  .spells{
+    margin-left: 30px;
   }
   
