@@ -115,3 +115,12 @@ body{
     max-width: 1920px;
     max-height: 1080px;
   }
+  .search{
+    position: absolute;
+    top: 10%;
+    right: 90%;
+    width: 150px;
+    height: 25px;
+    font-size: 20px;
+  }
+  
