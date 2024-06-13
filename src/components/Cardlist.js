@@ -37,7 +37,7 @@ export default function Cardlist({ onMonsterClick }) {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setCurrentSlide(0); // reset to the first slide when search term changes
+    setCurrentSlide(0); 
   };
 
   const filteredMonsters = monsters.filter(monster =>
