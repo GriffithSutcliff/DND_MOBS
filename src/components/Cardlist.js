@@ -27,23 +27,24 @@ export default function Cardlist({ onMonsterClick }) {
       });
   }, []);
 
-  const totalSlides = Math.ceil(monsters.length / monstersPerPage);
-
   const handleNextSlide = () => {
-    setCurrentSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
+    setCurrentSlide((prev) => prev === totalSlides - 1 ? 0 : prev + 1);
   };
 
   const handlePrevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
+    setCurrentSlide((prev) => prev === 0 ? totalSlides - 1 : prev - 1);
   };
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    setCurrentSlide(0); // reset to the first slide when search term changes
   };
 
   const filteredMonsters = monsters.filter(monster =>
     monster.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const totalSlides = Math.ceil(filteredMonsters.length / monstersPerPage);
 
   const renderMonsters = filteredMonsters.slice(
     currentSlide * monstersPerPage,
@@ -57,7 +58,7 @@ export default function Cardlist({ onMonsterClick }) {
   return (
     <div className='front'>
         <input
-          className='search'
+        className='search'
           type="text"
           placeholder="Search by name"
           value={searchTerm}
@@ -69,9 +70,10 @@ export default function Cardlist({ onMonsterClick }) {
         ))}
       </div>
       <div className='btns'>
-        <button onClick={handlePrevSlide}>Prev</button>
-        <button onClick={handleNextSlide}>Next</button>
+        <button onClick={handlePrevSlide} disabled={totalSlides <= 1}>Prev</button>
+        <button onClick={handleNextSlide} disabled={totalSlides <= 1}>Next</button>
       </div>
     </div>
   );
 }
+
