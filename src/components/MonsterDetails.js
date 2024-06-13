@@ -35,9 +35,10 @@ export default function MonsterDetails({monster, onBack}) {
     <div className='monster-details'>
       <div className='left-side'>
         <img src={imageUrl}></img>
-        <div>{monster.name}</div>
-        <div>Armor: {monsterDetails.armor_class[0].type} {monsterDetails.armor_class[0].value}</div>
+        <h2>{monster.name}</h2>
+        <div>Alignment: {monsterDetails.alignment}</div>
         <div>Type: {monsterDetails.type}</div>
+        <div>Armor: {monsterDetails.armor_class[0].type} {monsterDetails.armor_class[0].value}</div>
         <div>HP: {monsterDetails.hit_points}</div>
         <div>HD: {monsterDetails.hit_dice}</div>
         <div>Walk: {monsterDetails.speed.walk}{swim}</div>
@@ -76,6 +77,10 @@ export default function MonsterDetails({monster, onBack}) {
           <h2>Proficiencies</h2>
           {monsterDetails.proficiencies.map((spell, index) => (
             <div key={index}>{spell.proficiency.name}</div>
+          ))}
+          <h2>Special abilities</h2>
+          {monsterDetails.special_abilities.map((spell) => (
+            <div class="tooltip" title={spell.desc}>{spell.name}</div>
           ))}
         </div>
         </div>

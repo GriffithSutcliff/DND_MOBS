@@ -182,4 +182,6 @@ body{
   .spells{
     margin-left: 30px;
   }
-  
+.tooltip{
+    cursor: default;
+}
