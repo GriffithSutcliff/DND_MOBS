@@ -120,10 +120,63 @@ body{
     max-height: 1080px;
   }
   .search{
+    text-align: center;
     position: absolute;
     top: 10%;
-    right: 90%;
-    width: 150px;
-    height: 25px;
-    font-size: 20px;
+    right: 85%;
+    font-size: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(226, 43, 43);
+    outline: 0;
   }
+  .stats {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .stats-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; 
+  }
+  
+  .stats-column div {
+    margin-bottom: 10px;
+  }
+.monster-details{
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.monster-details button{
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(226, 43, 43);
+    background-image: none; 
+	background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.monster-details button:hover {
+    transform: scale(1.1);
+  }
+.monster-details button:active {
+    transform: scale(0.95);
+  }
+  .monster-details img{
+    max-width: 500px;
+    max-height: 500px;
+  }
+  

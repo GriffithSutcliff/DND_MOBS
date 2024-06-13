@@ -29,11 +29,47 @@ export default function MonsterDetails({monster, onBack}) {
   if (!monsterDetails) {
     return <div className='loading'>Loading<span class="dots"></span></div>;
   }
+  const swim = monsterDetails.speed.swim ? ` Swim: ${monsterDetails.speed.swim}` : '';
+  const imageUrl = monsterDetails.image ? `https://www.dnd5eapi.co${monsterDetails.image}` : require('./imgs/plug.png');
   return (
-    <div>
-    <button onClick={onBack}>Back</button>
-    <div>{monster.name}</div>
-    <div>{monsterDetails.armor_class[0].value}</div>
+    <div className='monster-details'>
+      <div className='left-side'>
+        <img src={imageUrl}></img>
+        <div>{monster.name}</div>
+        <div>Armor: {monsterDetails.armor_class[0].type} {monsterDetails.armor_class[0].value}</div>
+        <div>Type: {monsterDetails.type}</div>
+        <div>HP: {monsterDetails.hit_points}</div>
+        <div>HD: {monsterDetails.hit_dice}</div>
+        <div>Walk: {monsterDetails.speed.walk}{swim}</div>
+        <div>Size: {monsterDetails.size}</div>
+        <button onClick={onBack}>Back</button>
+      </div>
+      <div className='stats'>
+          <div className='stats-column'>
+            <div>Strength</div>
+            <div>{monsterDetails.strength}</div>
+          </div>
+          <div className='stats-column'>
+            <div>Dexterity</div>
+            <div>{monsterDetails.dexterity}</div>
+          </div>
+          <div className='stats-column'>
+            <div>Constitution</div>
+            <div>{monsterDetails.constitution}</div>
+          </div>
+          <div className='stats-column'>
+            <div>Intelligence</div>
+            <div>{monsterDetails.intelligence}</div>
+          </div>
+          <div className='stats-column'>
+            <div>Wisdom</div>
+            <div>{monsterDetails.wisdom}</div>
+          </div>
+          <div className='stats-column'>
+            <div>Charisma</div>
+            <div>{monsterDetails.charisma}</div>
+          </div>
+        </div>
     </div>
   )
 }
