@@ -97,7 +97,7 @@
     border-style: solid;
     border-color: rgb(226, 43, 43);
     background-image: none; 
-	background: transparent;
+	  background: transparent;
     font-size: 25px;
     cursor: pointer;
     transition: transform 0.5s ease;
@@ -115,7 +115,7 @@
     transform: scale(1.05);
   }
 body{
-    background-image: url('');
+    background-image: url('./components/imgs/phone.png');
     max-width: 1920px;
     max-height: 1080px;
   }
@@ -164,7 +164,7 @@ body{
     border-style: solid;
     border-color: rgb(226, 43, 43);
     background-image: none; 
-	background: transparent;
+	  background: transparent;
     font-size: 25px;
     cursor: pointer;
     transition: transform 0.5s ease;
