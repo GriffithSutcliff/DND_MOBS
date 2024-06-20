@@ -229,3 +229,53 @@ body{
       margin-bottom: 20px;
   }
   }
+@media(max-width: 1215px){
+  .search{
+        text-align: center;
+        position: unset;
+        margin-top: 10px;
+      }
+      .changeLang{
+        position: unset;
+        margin-top: 10px;
+      }
+      .App{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btns{
+        position: unset;
+        margin-bottom: 20px;
+    }
+    .monster-details{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: unset;
+      top: unset;
+      left: unset;
+      transform: unset;
+    }
+    .stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .spells{
+      margin-left: unset;
+    }
+    .left-side{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .right-side{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+}
