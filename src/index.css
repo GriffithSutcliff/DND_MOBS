@@ -53,23 +53,6 @@
     transform: translate(-50%, -50%);
     font-size: 250px;
 }
-@keyframes dots {
-    0% {
-        content: '';
-    }
-    25% {
-        content: '.';
-    }
-    50% {
-        content: '..';
-    }
-    75% {
-        content: '...';
-    }
-    100% {
-        content: '';
-    }
-}
 .loading .dots{
     position: absolute;
     top: 50%;
@@ -185,3 +168,45 @@ body{
 .tooltip{
     cursor: default;
 }
+.left-side img{
+  max-height: 400px;
+}
+  .changeLang{
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    font-size: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(226, 43, 43);
+    outline: 0;
+    background-image: none; 
+	  background: transparent;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.changeLang:hover {
+  transform: scale(1.1);
+}
+.changeLang:active {
+  transform: scale(0.95);
+}
+@keyframes dots {
+  0% {
+      content: '';
+  }
+  25% {
+      content: '.';
+  }
+  50% {
+      content: '..';
+  }
+  75% {
+      content: '...';
+  }
+  100% {
+      content: '';
+  }
+}
+

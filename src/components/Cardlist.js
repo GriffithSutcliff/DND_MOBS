@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
-export default function Cardlist({ onMonsterClick }) {
+export default function Cardlist({ onMonsterClick, lang, languages }) {
   const [monsters, setMonsters] = useState([]);
   const [error, setError] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,18 +60,18 @@ export default function Cardlist({ onMonsterClick }) {
         <input
         className='search'
           type="text"
-          placeholder="Search by name"
+          placeholder={lang === 'eng' ? languages.eng.search : languages.ru.search}
           value={searchTerm}
           onChange={handleSearchChange}
         />
       <div className="monster-list">
         {renderMonsters.map(monster => (
-          <Card key={monster.index} monster={monster} onCardClick={onMonsterClick} />
+          <Card key={monster.index} monster={monster} onCardClick={onMonsterClick} lang={lang}/>
         ))}
       </div>
       <div className='btns'>
-        <button onClick={handlePrevSlide} disabled={totalSlides <= 1}>Prev</button>
-        <button onClick={handleNextSlide} disabled={totalSlides <= 1}>Next</button>
+        <button onClick={handlePrevSlide} disabled={totalSlides <= 1}>{lang === 'eng' ? languages.eng.prev : languages.ru.prev}</button>
+        <button onClick={handleNextSlide} disabled={totalSlides <= 1}>{lang === 'eng' ? languages.eng.next : languages.ru.next}</button>
       </div>
     </div>
   );

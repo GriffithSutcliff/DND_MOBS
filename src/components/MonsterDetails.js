@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function MonsterDetails({monster, onBack}) {
+export default function MonsterDetails({monster, onBack, lang, languages }) {
   const [monsterDetails, setMonsterDetails] = useState();
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function MonsterDetails({monster, onBack}) {
         <div>Walk: {monsterDetails.speed.walk}{swim}</div>
         <div>Size: {monsterDetails.size}</div>
         <div>Rate: {monsterDetails.challenge_rating}, XP: {monsterDetails.xp}</div>
-        <button onClick={onBack}>Back</button>
+        <button onClick={onBack}>{lang === 'eng' ? languages.eng.back : languages.ru.back}</button>
       </div>
       <div className='right-side'>
         <div className='stats'>
