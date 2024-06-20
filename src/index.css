@@ -209,4 +209,23 @@ body{
       content: '';
   }
 }
-
+@media(max-width: 1650px){
+  .search{
+      text-align: center;
+      position: unset;
+      margin-top: 10px;
+    }
+    .changeLang{
+      position: unset;
+      margin-top: 10px;
+    }
+    .App{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btns{
+      position: unset;
+      margin-bottom: 20px;
+  }
+  }
